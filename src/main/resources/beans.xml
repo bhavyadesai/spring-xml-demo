@@ -6,16 +6,34 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <!-- bean definitions here -->
-    <bean id="actor" class="com.stackroute.spring.beans.Actor">
-        <property name="name" value="Sudeep"/>
-        <property name="gender" value="Male"/>
-        <property name="age" value="45"/>
+<!--    &lt;!&ndash; bean definitions here &ndash;&gt;-->
+<!--    <bean id="actor" class="com.stackroute.spring.beans.Actor">-->
+<!--        <property name="name" value="Sudeep"/>-->
+<!--        <property name="gender" value="Male"/>-->
+<!--        <property name="age" value="45"/>-->
+<!--    </bean>-->
+<!--    <bean id="movie" class="com.stackroute.spring.beans.Movie">-->
+<!--        <property name="actor">-->
+<!--            <ref bean="actor"></ref>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--</beans>-->
+    <bean id="movie4" autowire="byType" class="com.stackroute.spring.beans.Movie">
+        <property name="movieName" value="ABCD"></property>
+        <property name="director" value="REMO"></property>
     </bean>
-    <bean id="movie" class="com.stackroute.spring.beans.Movie">
-        <property name="actor">
-            <ref bean="actor"></ref>
-        </property>
+    <bean id="movie5" autowire="byName" class="com.stackroute.spring.beans.Movie">
+        <property name="movieName" value="ABCD"></property>
+        <property name="director" value="REMO"></property>
     </bean>
 
+    <bean id="actor" class="com.stackroute.spring.beans.Actor">
+        <property name="name" value="aarti"></property>
+        <property name="age" value="20"></property>
+        <property name="gender" value="male"></property>
+    </bean>
+    <bean id="lifecycledemo" class="com.stackroute.spring.beans.LifeCycleDemo" init-method="customInit" destroy-method="customDestroy">
+
+    </bean>
 </beans>
