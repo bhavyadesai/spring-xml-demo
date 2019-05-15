@@ -5,26 +5,17 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="movie4" autowire="byName" class="com.stackroute.spring.beans.Movie">
-        <property name="movieName" value="ABCD"></property>
-        <property name="director" value="REMO"></property>
-    </bean>
 
-    <bean id="Actor" class="com.stackroute.spring.beans.Actor">
-        <property name="name" value="aart"></property>
-        <property name="age" value="26"></property>
-        <property name="gender" value="male"></property>
-    </bean>
-
-    <bean id="movie5" autowire="byName" class="com.stackroute.spring.beans.Movie">
-        <property name="movieName" value="ABCD"></property>
-        <property name="director" value="REMO"></property>
-    </bean>
-
+    <!-- bean definitions here -->
     <bean id="actor" class="com.stackroute.spring.beans.Actor">
-        <property name="name" value="aarti"></property>
-        <property name="age" value="20"></property>
-        <property name="gender" value="male"></property>
+        <property name="name" value="Sudeep"/>
+        <property name="gender" value="Male"/>
+        <property name="age" value="45"/>
+    </bean>
+    <bean id="movie" class="com.stackroute.spring.beans.Movie">
+        <property name="actor">
+            <ref bean="actor"></ref>
+        </property>
     </bean>
 
 </beans>
