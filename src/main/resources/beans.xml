@@ -5,15 +5,31 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="actor" class="com.stackroute.spring.beans.Actor">
-        <property name="name" value="Alia"></property>
-        <property name="age" value="25"></property>
-        <property name="gender" value="female"></property>
+    <!-- bean definitions here -->
+    <bean id ="movie" class="com.stackroute.spring.beans.Movie" scope="prototype">
+
+        <constructor-arg name="movieName" value="The Avengers" />
+
+        <constructor-arg name="actorNAme" value="Robert Jr" />
+
+        <constructor-arg name="genre" value="Action" />
+
+
     </bean>
 
-    <bean id="movie" class="com.stackroute.spring.beans.Movie">
-        <property name="movieName" value="Avenger"></property>
-        <property name="director" value="Tom"></property>
-        <property name="actor" ref="actor"></property>
+    <bean id = "movie1" class="com.stackroute.spring.beans.Movie" scope="prototype">
+        <property name="movieName" value="URI"/>
+        <property name="actorNAme" value="Vicky Kaushal"/>
+        <property name="genre" value="Action"/>
+
+
+    </bean>
+
+    <bean id = "actor" class="com.stackroute.spring.beans.Actor" scope="prototype">
+        <property name="actorName" value="yash"/>
+        <property name="gender" value="male"/>
+        <property name="age" value="40"/>
+
+
     </bean>
 </beans>

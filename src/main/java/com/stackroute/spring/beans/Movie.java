@@ -3,29 +3,19 @@ package com.stackroute.spring.beans;
 import com.stackroute.spring.beans.Actor;
 
 
-public class Movie
-{
+public class Movie {
     private String movieName;
-    private String director;
-    private Actor actor;
+    private String actorNAme;
+    private String genre;
 
     public Movie() {
 
     }
 
-    public Movie(String movieName, String director, Actor actor1) {
+    public Movie(String movieName, String actorNAme, String genre) {
         this.movieName = movieName;
-        this.director = director;
-        this.actor = actor1;
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "movieName='" + movieName + '\'' +
-                ", director='" + director + '\'' +
-                ", actor=" + actor +
-                '}';
+        this.actorNAme = actorNAme;
+        this.genre = genre;
     }
 
     public String getMovieName() {
@@ -36,21 +26,32 @@ public class Movie
         this.movieName = movieName;
     }
 
-    public String getDirector() {
-        return director;
+    public String getActorNAme() {
+        return actorNAme;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
+    public void setActorNAme(String actorNAme) {
+        this.actorNAme = actorNAme;
     }
 
-    public Actor getActor() {
-        return actor;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setActor(Actor actor) {
-        this.actor = actor;
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String welcomeMsg() {
+        return "Welcome !!!";
+    }
+
+    @Override
+    public String toString() {
+        return "Movie Information " +
+                "movieName='" + movieName + '\'' +
+                ", actorNAme='" + actorNAme + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
     }
 }
-
-
