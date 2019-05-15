@@ -1,35 +1,51 @@
 package com.stackroute.spring.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 
-public class Actor {
-    private String actorName;
-    private String gender;
+public class Actor
+{
+
+    private String name;
     private int age;
-
-    public Actor() {
-
-    }
-
-    public Actor(String actorName, String gender, int age) {
-        this.actorName = actorName;
-        this.gender = gender;
+    public Actor(String name, int age, String gender) {
+        this.name = name;
         this.age = age;
+        this.gender = gender;
     }
 
-    public String getActorName() {
-        return actorName;
-    }
-
-    public void setActorName(String actorName) {
-        this.actorName = actorName;
-    }
 
     public String getGender() {
         return gender;
     }
 
+    @Override
+    public String toString() {
+        return "Actor{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
+
+
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    private String gender;
+    public Actor(){}
+
+    public Actor(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
@@ -39,17 +55,5 @@ public class Actor {
     public void setAge(int age) {
         this.age = age;
     }
-
-    public String welcomeMsg() {
-        return "Welcome !!!";
-    }
-
-    @Override
-    public String toString() {
-        return "actor Information " +
-                "actorName='" + actorName + '\'' +
-                ", gender='" + gender + '\'' +
-                ", age='" + age + '\'' +
-                '}';
-    }
 }
+

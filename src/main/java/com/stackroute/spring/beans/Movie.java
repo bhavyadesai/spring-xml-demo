@@ -1,21 +1,32 @@
 
 package com.stackroute.spring.beans;
 import com.stackroute.spring.beans.Actor;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.stackroute.spring.beans.Actor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
-public class Movie {
+public class Movie
+{
     private String movieName;
-    private String actorNAme;
-    private String genre;
+    private String director;
+    private Actor actor;
 
-    public Movie() {
+    public Movie() { }
 
+    public Movie(String movieName, String director, Actor actor1) {
+        this.movieName = movieName;
+        this.director = director;
+        this.actor= actor1;
     }
 
-    public Movie(String movieName, String actorNAme, String genre) {
-        this.movieName = movieName;
-        this.actorNAme = actorNAme;
-        this.genre = genre;
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "movieName='" + movieName + '\'' +
+                ", director='" + director + '\'' +
+                ", actor=" + actor +
+                '}';
     }
 
     public String getMovieName() {
@@ -26,32 +37,19 @@ public class Movie {
         this.movieName = movieName;
     }
 
-    public String getActorNAme() {
-        return actorNAme;
+    public String getDirector() {
+        return director;
     }
 
-    public void setActorNAme(String actorNAme) {
-        this.actorNAme = actorNAme;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
-    public String getGenre() {
-        return genre;
+    public Actor getActor() {
+        return actor;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String welcomeMsg() {
-        return "Welcome !!!";
-    }
-
-    @Override
-    public String toString() {
-        return "Movie Information " +
-                "movieName='" + movieName + '\'' +
-                ", actorNAme='" + actorNAme + '\'' +
-                ", genre='" + genre + '\'' +
-                '}';
+    public void setActor(Actor actor) {
+        this.actor = actor;
     }
 }

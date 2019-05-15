@@ -5,15 +5,26 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="actor" class="com.stackroute.spring.beans.Actor">
-        <property name="name" value="Alia"></property>
-        <property name="age" value="25"></property>
-        <property name="gender" value="female"></property>
+    <bean id="movie4" autowire="byName" class="com.stackroute.spring.beans.Movie">
+        <property name="movieName" value="ABCD"></property>
+        <property name="director" value="REMO"></property>
     </bean>
 
-    <bean id="movie" class="com.stackroute.spring.beans.Movie">
-        <property name="movieName" value="Avenger"></property>
-        <property name="director" value="Tom"></property>
-        <property name="actor" ref="actor"></property>
+    <bean id="Actor" class="com.stackroute.spring.beans.Actor">
+        <property name="name" value="aart"></property>
+        <property name="age" value="26"></property>
+        <property name="gender" value="male"></property>
     </bean>
+
+    <bean id="movie5" autowire="byName" class="com.stackroute.spring.beans.Movie">
+        <property name="movieName" value="ABCD"></property>
+        <property name="director" value="REMO"></property>
+    </bean>
+
+    <bean id="actor" class="com.stackroute.spring.beans.Actor">
+        <property name="name" value="aarti"></property>
+        <property name="age" value="20"></property>
+        <property name="gender" value="male"></property>
+    </bean>
+
 </beans>
